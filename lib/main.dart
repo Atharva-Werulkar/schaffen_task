@@ -306,7 +306,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     const Text(
-                      'Mute notification',
+                      'mute notification',
                       style: TextStyle(
                         fontSize: 20.0,
                         color: Colors.black,
