@@ -1,6 +1,7 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:schaffen_task/utils/constants.dart';
 
 void main() {
@@ -282,7 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             height: getDeviceHeight(context) * 0.2,
                             width: getDeviceWidth(context) * 0.35,
                             decoration: BoxDecoration(
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('assets/images/image.png'),
                                 fit: BoxFit.cover,
                               ),
@@ -317,7 +318,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       value: _isSwitched,
                       onChanged: (bool value) {
                         setState(() {
-                          //change the value of switch
                           _isSwitched = value;
                         });
                       },
@@ -325,6 +325,174 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
+              ),
+            ),
+
+            //four buttons clear chat, encryption, exit community, report,
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 15.0, vertical: 15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Iconsax.trash,
+                            ),
+                            SizedBox(width: 10.0),
+                            Text(
+                              'Clear Chat',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Iconsax.lock,
+                            ),
+                            SizedBox(width: 10.0),
+                            Text(
+                              'Encryption',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Iconsax.logout,
+                              color: Colors.red,
+                            ),
+                            SizedBox(width: 10.0),
+                            Text(
+                              'Exit Community',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Iconsax.dislike,
+                              color: Colors.red,
+                            ),
+                            SizedBox(width: 10.0),
+                            Text(
+                              'Report',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            //members
+            SliverToBoxAdapter(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 15.0),
+                        child: Text(
+                          'Members',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 15.0),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.navigate_next,
+                            size: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: getDeviceHeight(context),
+                    child: ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                      ),
+                      scrollDirection: Axis.vertical,
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5.0, vertical: 10.0),
+                          child: Container(
+                            height: getDeviceHeight(context) * 0.2,
+                            width: getDeviceWidth(context) * 0.35,
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                image: AssetImage('assets/images/image.png'),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
